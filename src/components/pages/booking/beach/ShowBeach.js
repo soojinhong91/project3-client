@@ -33,7 +33,7 @@ export default class ShowBeach extends Component {
         <ProductTab />
         { this.state.beachitems.map((b) => (
           <div className="showpage">
-            <div className="showpage-img"><img src="" alt={"b.beachitem"}/></div>
+            <div className="showpage-img"><img src={"http://placeimg.com/640/480/nature"} alt={"b.beachitem"}/></div>
 
             <div className="showpage-text">
               <h4>{ b.beachitem }</h4>
