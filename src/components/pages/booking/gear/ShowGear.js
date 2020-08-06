@@ -33,7 +33,7 @@ export default class ShowGear extends Component {
         <ProductTab />
         { this.state.geartypes.map((b) => (
           <div className="showpage">
-            <div className="showpage-img"><img src="" alt={"b.geartype"}/></div>
+            <div className="showpage-img"><img src={"http://placeimg.com/640/480/nature"} alt={"b.geartype"}/></div>
 
             <div className="showpage-text">
               <h4>{ b.geartype }</h4>

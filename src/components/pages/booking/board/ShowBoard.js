@@ -33,7 +33,7 @@ export default class ShowBoard extends Component {
         <ProductTab />
         { this.state.boardtypes.map((b) => (
           <div className="showpage">
-            <div className="showpage-img"><img src="" alt={"b.boardtype"}/></div>
+            <div className="showpage-img"><img src={"http://placeimg.com/640/480/nature"} alt={"b.boardtype"}/></div>
 
             <div className="showpage-text">
               <h4>{ b.boardtype }</h4>
