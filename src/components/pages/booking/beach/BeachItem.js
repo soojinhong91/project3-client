@@ -8,9 +8,9 @@ export default class BeachItem extends Component {
     return(
         <div className="card" id="itemlist">
           <img
-            src={"http://placeimg.com/300/200/nature"}
+            src={ image }
             className="card-img-top"
-            id="itemImg"
+            id="itemThumbnail"
             alt="beachItems"
           />
           <div className="card-body">

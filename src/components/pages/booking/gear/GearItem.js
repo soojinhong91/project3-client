@@ -7,9 +7,9 @@ export default class GearItem extends Component {
     return(
         <div className="card" id="itemlist">
           <img
-          src={"http://placeimg.com/300/200/nature"}
+            src={ image }
             className="card-img-top"
-            id="itemImg"
+            id="itemThumbnail"
             alt="gearItems"
           />
           <div className="card-body">

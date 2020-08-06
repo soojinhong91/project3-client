@@ -110,10 +110,20 @@ h1, h3, h4, h6 {
 }
 
 /* item list */
+#item-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 #itemlist {
-  display: inline-block;
+  display: inline-flex;
   min-width: 300px;
   margin: 50px 20px;
+}
+
+#itemThumbnail {
+  max-width: 400px;
 }
 
 /* show pages */
@@ -121,6 +131,10 @@ h1, h3, h4, h6 {
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
+}
+
+.big-image {
+  max-width: 600px;
 }
 
 .calendar {

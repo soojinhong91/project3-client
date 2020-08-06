@@ -32,11 +32,13 @@ export default class Gear extends Component {
         <Navbar />
         <h1>Gears</h1>
         <ProductTab />
-        {this.state.geartypes.map((g) =>
-          <Link to={ `/gears/${ g._id }`}>
-            <GearItem data={ g } />
-          </Link>
-        )}
+        <div id="item-deck">
+          {this.state.geartypes.map((g) =>
+            <Link to={ `/gears/${ g._id }`}>
+              <GearItem data={ g } />
+            </Link>
+          )}
+        </div>
       </div>
     );
   }

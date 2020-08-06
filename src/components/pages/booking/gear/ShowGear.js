@@ -31,16 +31,17 @@ export default class ShowGear extends Component {
         <Navbar />
         <h1>Gears</h1>
         <ProductTab />
-        { this.state.geartypes.map((b) => (
+        { this.state.geartypes.map((g) => (
           <div className="showpage">
-            <div className="showpage-img"><img src={"http://placeimg.com/640/480/nature"} alt={"b.geartype"}/></div>
-
+            <div className="showpage-img"><img src={ g.image } alt={ g.geartype }  className="big-image" /></div>
             <div className="showpage-text">
-              <h4>{ b.geartype }</h4>
-              <h4>${ b.price }</h4>
+              <h4>{ g.geartype }</h4>
+              <h4>${ g.price }</h4>
               <div className="showpage-input">
                 <h6>Qty:<input type="number" required/></h6>
-                <div className="calendar">Date:<Calendar /></div>
+                <div className="calendar">
+                  <h6>Date:<Calendar /></h6>
+                </div>
                 <h6>Hours:<input type="number" required/></h6>
               </div>
               <div className="button"><button type="button" class="btn btn-outline-info">Book</button></div>

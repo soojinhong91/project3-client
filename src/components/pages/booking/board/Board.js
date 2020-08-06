@@ -32,11 +32,13 @@ export default class Board extends Component {
         <Navbar />
         <h1>Boards</h1>
         <ProductTab />
-        {this.state.boardtypes.map((b) =>
+        <div id="item-deck">
+          {this.state.boardtypes.map((b) =>
             <Link to={`/boards/${ b._id }`}>
               <BoardItem data={ b } />
             </Link>
-        )}
+          )}
+        </div>
       </div>
     );
   }

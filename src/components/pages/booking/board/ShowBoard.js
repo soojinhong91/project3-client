@@ -26,6 +26,8 @@ export default class ShowBoard extends Component {
   }
 
   render() {
+    const { boardtype, price, image } = this.state;
+
     return (
       <div className="page">
         <Navbar />
@@ -33,14 +35,16 @@ export default class ShowBoard extends Component {
         <ProductTab />
         { this.state.boardtypes.map((b) => (
           <div className="showpage">
-            <div className="showpage-img"><img src={"http://placeimg.com/640/480/nature"} alt={"b.boardtype"}/></div>
+            <div className="showpage-img"><img src={ b.image } alt={ b.boardtype } className="big-image" /></div>
 
             <div className="showpage-text">
               <h4>{ b.boardtype }</h4>
               <h4>${ b.price }</h4>
               <div className="showpage-input">
                 <h6>Qty:<input type="number" required/></h6>
-                <div className="calendar">Date: <Calendar /></div>
+                <div className="calendar">
+                  <h6>Date: <Calendar /></h6>
+                </div>
                 <h6>Hours:<input type="number" required/></h6>
                 </div>
               <div className="button"><button type="button" class="btn btn-outline-info">Book</button></div>

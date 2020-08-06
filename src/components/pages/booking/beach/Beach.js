@@ -32,11 +32,13 @@ export default class Beach extends Component {
         <Navbar />
         <h1>Beach Items</h1>
         <ProductTab />
-        {this.state.beachitems.map((b) =>
-          <Link to={ `/beaches/${ b._id }`}>
-            <BeachItem data={ b } />
-          </Link>
-        )}
+        <div id="item-deck">
+          {this.state.beachitems.map((b) =>
+            <Link to={ `/beaches/${ b._id }`}>
+              <BeachItem data={ b } />
+            </Link>
+          )}
+        </div>
       </div>
     );
   }
