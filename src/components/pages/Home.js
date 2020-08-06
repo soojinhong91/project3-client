@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
+import Landing from "./Landing";
 
 export default function Home() {
   const { userData } = useContext(UserContext);
@@ -8,11 +9,10 @@ export default function Home() {
   return (
     <div className="page">
       { userData.user ? (
-        <h1>Welcome { userData.user.displayName }</h1>
+        <Landing />
       ) : (
         <>
-          <h2>You are not logged in</h2>
-          <Link to="/login">Log in</Link>
+          <h2>Join us and enjoy your ocean!</h2>
         </>
       ) }
     </div>

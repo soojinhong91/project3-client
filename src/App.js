@@ -1,11 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Axios from "axios";
+import UserContext from "./context/UserContext";
+
 import Header from "./components/layout/Header";
 import Home from "./components/pages/Home";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
-import UserContext from "./context/UserContext";
+
+import ProductList from "./components/pages/booking/ProductList";
+
+import Board from "./components/pages/booking/board/Board";
+import ShowBoard from "./components/pages/booking/board/ShowBoard";
+import Gear from "./components/pages/booking/gear/Gear";
+import ShowGear from "./components/pages/booking/gear/ShowGear";
+import Beach from "./components/pages/booking/beach/Beach";
+import ShowBeach from "./components/pages/booking/beach/ShowBeach";
+
+import MyCart from "./components/pages/MyCart";
 
 import "./style.css";
 
@@ -48,9 +60,22 @@ export default function App() {
           <Header />
           <div className="container">
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
+              <Route exact path="/" component={ Home } />
+              <Route path="/login" component={ Login } />
+              <Route path="/register" component={ Register } />
+
+              <Route path="/products" component={ ProductList } />
+
+              <Route exact path="/boards" component={ Board } />
+              <Route path="/boards/:boardId" component={ ShowBoard } />
+
+              <Route exact path="/gears" component={ Gear } />
+              <Route path="/gears/:gearId" component={ ShowGear } />
+
+              <Route exact path="/beaches" component={ Beach } />
+              <Route path="/beaches/:beachId" component={ ShowBeach } />
+
+              <Route path="/mycart" component={ MyCart } />
             </Switch>
           </div>
         </UserContext.Provider>
@@ -58,3 +83,5 @@ export default function App() {
     </>
   );
 }
+
+// /<Route path="/" component={  } />

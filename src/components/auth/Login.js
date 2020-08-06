@@ -4,6 +4,10 @@ import UserContext from "../../context/UserContext";
 import Axios from 'axios';
 import ErrorNotice from "../misc/ErrorNotice";
 
+import server from '../constants.js';
+
+const SERVER_USERS_LOGIN = server('users/login');
+
 export default function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -17,7 +21,7 @@ export default function Login() {
 
     try {
       const loginUser = { email, password };
-      const loginRes = await Axios.post("http://localhost:5000/users/login", loginUser)
+      const loginRes = await Axios.post(SERVER_USERS_LOGIN, loginUser)
       setUserData({
         token: loginRes.data.token,
         user: loginRes.data.user
@@ -40,6 +44,8 @@ export default function Login() {
         <input
           id="login-email"
           type="email"
+          class="form-control"
+          placeholder="test@ga.co"
           onChange={(e) => setEmail(e.target.value)}
         />
 
@@ -47,10 +53,11 @@ export default function Login() {
         <input
           id="login-password"
           type="password"
+          class="form-control"
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <input type="submit" value="Log in" />
+        <input type="submit" value="Log in" className="btn btn-info" />
       </form>
     </div>
   )
