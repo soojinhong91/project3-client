@@ -30,7 +30,7 @@ export default class Gear extends Component {
     return (
       <div className="page">
         <Navbar />
-        <h1>Gears</h1>
+        <h1>Gear</h1>
         <ProductTab />
         <div id="item-deck">
           {this.state.geartypes.map((g) =>

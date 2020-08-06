@@ -26,8 +26,6 @@ export default class ShowBoard extends Component {
   }
 
   render() {
-    const { boardtype, price, image } = this.state;
-
     return (
       <div className="page">
         <Navbar />
