@@ -21,6 +21,10 @@ import MyCart from "./components/pages/MyCart";
 
 import "./style.css";
 
+import server from "./components/constants";
+
+const SERVER_USERS = server('users');
+
 export default function App() {
   const [userData, setUserData] = useState({
     token: undefined,
@@ -35,12 +39,13 @@ export default function App() {
         token = "";
       }
       const tokenRes = await Axios.post(
-        "http://localhost:5000/users/tokenIsValid",
+        SERVER_USERS + '/tokenIsValid',
+        // "http://localhost:5000/users/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
       );
       if (tokenRes.data) {
-        const userRes = await Axios.get("http://localhost:5000/users/", {
+        const userRes = await Axios.get(SERVER_USERS, {
           headers: { "x-auth-token": token },
         });
         setUserData({
